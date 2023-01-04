@@ -1,0 +1,28 @@
+﻿CREATE TABLE [STG].[STG_EBS_MTL_CATEGORY_SETS] (
+    [ROW_ID]                        VARCHAR (100)  NULL,
+    [CATEGORY_SET_ID]               FLOAT (53)     NULL,
+    [STRUCTURE_ID]                  FLOAT (53)     NULL,
+    [VALIDATE_FLAG]                 VARCHAR (100)  NULL,
+    [CONTROL_LEVEL]                 FLOAT (53)     NULL,
+    [DEFAULT_CATEGORY_ID]           FLOAT (53)     NULL,
+    [LAST_UPDATE_DATE]              DATETIME       NULL,
+    [LAST_UPDATED_BY]               FLOAT (53)     NULL,
+    [CREATION_DATE]                 DATETIME       NULL,
+    [CREATED_BY]                    FLOAT (53)     NULL,
+    [LAST_UPDATE_LOGIN]             FLOAT (53)     NULL,
+    [REQUEST_ID]                    FLOAT (53)     NULL,
+    [PROGRAM_APPLICATION_ID]        FLOAT (53)     NULL,
+    [PROGRAM_ID]                    FLOAT (53)     NULL,
+    [PROGRAM_UPDATE_DATE]           DATETIME       NULL,
+    [CATEGORY_SET_NAME]             VARCHAR (100)  NULL,
+    [DESCRIPTION]                   VARCHAR (1000) NULL,
+    [MULT_ITEM_CAT_ASSIGN_FLAG]     VARCHAR (100)  NULL,
+    [CONTROL_LEVEL_UPDATEABLE_FLAG] VARCHAR (100)  NULL,
+    [MULT_ITEM_CAT_UPDATEABLE_FLAG] VARCHAR (100)  NULL,
+    [VALIDATE_FLAG_UPDATEABLE_FLAG] VARCHAR (100)  NULL,
+    [HIERARCHY_ENABLED]             VARCHAR (100)  NULL,
+    [OMD_INSERT_DATETIME]           DATETIME2 (7)  NULL,
+    [OMD_FILE_NAME]                 VARCHAR (8000) NULL,
+    [OMD_HASH_FULL_RECORD]          VARCHAR (1000) NULL
+);
+

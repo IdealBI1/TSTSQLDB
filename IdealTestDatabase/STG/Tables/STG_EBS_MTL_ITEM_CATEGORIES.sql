@@ -1,0 +1,20 @@
+﻿CREATE TABLE [STG].[STG_EBS_MTL_ITEM_CATEGORIES] (
+    [INVENTORY_ITEM_ID]      FLOAT (53)     NULL,
+    [ORGANIZATION_ID]        FLOAT (53)     NULL,
+    [CATEGORY_SET_ID]        FLOAT (53)     NULL,
+    [CATEGORY_ID]            FLOAT (53)     NULL,
+    [LAST_UPDATE_DATE]       DATETIME       NULL,
+    [LAST_UPDATED_BY]        FLOAT (53)     NULL,
+    [CREATION_DATE]          DATETIME       NULL,
+    [CREATED_BY]             FLOAT (53)     NULL,
+    [LAST_UPDATE_LOGIN]      FLOAT (53)     NULL,
+    [REQUEST_ID]             FLOAT (53)     NULL,
+    [PROGRAM_APPLICATION_ID] FLOAT (53)     NULL,
+    [PROGRAM_ID]             FLOAT (53)     NULL,
+    [PROGRAM_UPDATE_DATE]    DATETIME       NULL,
+    [WH_UPDATE_DATE]         DATETIME       NULL,
+    [OMD_INSERT_DATETIME]    DATETIME2 (7)  NULL,
+    [OMD_FILE_NAME]          VARCHAR (8000) NULL,
+    [OMD_HASH_FULL_RECORD]   VARCHAR (1000) NULL
+);
+
