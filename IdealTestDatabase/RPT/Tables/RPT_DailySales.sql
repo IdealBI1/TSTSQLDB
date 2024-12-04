@@ -1,0 +1,26 @@
+﻿CREATE TABLE [RPT].[RPT_DailySales] (
+    [InvoiceNumber]                    BIGINT          NULL,
+    [LineNumber]                       INT             NULL,
+    [Dim_Location_Key]                 VARCHAR (32)    NOT NULL,
+    [Dim_Product_Key]                  VARCHAR (32)    NOT NULL,
+    [Dim_TransactionSource_Key]        INT             NOT NULL,
+    [Item Code]                        NVARCHAR (60)   NULL,
+    [Dim_Date_Key]                     INT             NULL,
+    [TransactionDate]                  DATETIME2 (7)   NULL,
+    [SalesOrder]                       NVARCHAR (20)   NULL,
+    [OrderSource]                      NVARCHAR (60)   NULL,
+    [SalesQuantity]                    DECIMAL (36, 4) NULL,
+    [SalesValueExGST]                  DECIMAL (37, 4) NULL,
+    [CustomerRebates]                  DECIMAL (38, 4) NOT NULL,
+    [NetSalesValue]                    DECIMAL (38, 4) NULL,
+    [COGS]                             DECIMAL (36, 4) NULL,
+    [LoyaltyRebate]                    DECIMAL (38, 4) NOT NULL,
+    [RawMargin]                        DECIMAL (38, 4) NULL,
+    [CommercialMargin]                 DECIMAL (38, 4) NULL,
+    [SupplierRebate]                   DECIMAL (38, 6) NULL,
+    [SalesCommercialMarginWithRebates] DECIMAL (38, 4) NULL,
+    [NewColumn]                        INT             NULL,
+    [NewColumn2]                       NVARCHAR (20)   NULL,
+    [TobeDeleted]                      VARCHAR (20)    NULL
+);
+

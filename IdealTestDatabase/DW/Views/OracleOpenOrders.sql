@@ -1,0 +1,46 @@
+﻿
+
+CREATE View [DW].[OracleOpenOrders] 
+/*
+This view can be used to find an open order not available in Clear Accounting or in the Oracle by looking the PubRefNum in other place and if a match is not found then that order is not open there.
+*/
+
+As
+
+
+SELECT  OE_ORDER_HEADERS_ALL.ORDERED_DATE
+        , OE_ORDER_HEADERS_ALL.ORDER_NUMBER
+        , OE_ORDER_HEADERS_ALL.CUST_PO_NUMBER PubRefNum
+        , OE_ORDER_LINES_ALL.SCHEDULE_SHIP_DATE EstimatedDeliveryDate
+        , PO_REQUISITION_LINES_ALL.ATTRIBUTE1 As PubRefLineNum
+        , isnull(sum(OE_ORDER_LINES_ALL.ordered_quantity),0) - isnull(sum(shipping_quantity),0)  As QtyRemainingOnOrder
+        , isnull(sum(shipping_quantity),0)  As PreviouslySuppliedQuantity
+FROM    HSTG.HSTG_EBS_OE_ORDER_LINES_ALL OE_ORDER_LINES_ALL (nolock)
+        Join HSTG.HSTG_EBS_OE_ORDER_HEADERS_ALL OE_ORDER_HEADERS_ALL (nolock)
+            On OE_ORDER_LINES_ALL.header_id = OE_ORDER_HEADERS_ALL.header_id
+            And OE_ORDER_HEADERS_ALL.OMD_CURRENT_RECORD_INDICATOR = 'Y'
+            And OE_ORDER_HEADERS_ALL.OMD_IS_RECORD_DELETED = 'N'
+            And OE_ORDER_HEADERS_ALL.OPEN_FLAG = 'Y'
+            And OE_ORDER_HEADERS_ALL.BOOKED_FLAG = 'Y'
+            And OE_ORDER_HEADERS_ALL.CANCELLED_FLAG = 'N'
+            And OE_ORDER_HEADERS_ALL.ORDERED_DATE > '2022-01-01'
+            ANd OE_ORDER_HEADERS_ALL.ORDER_TYPE_ID = 1163
+        Join HSTG.HSTG_EBS_MTL_SYSTEM_ITEMS_B MTL_SYSTEM_ITEMS (nolock)
+            On OE_ORDER_LINES_ALL.inventory_item_id = MTL_SYSTEM_ITEMS.inventory_item_id
+            And MTL_SYSTEM_ITEMS.OMD_CURRENT_RECORD_INDICATOR = 'Y'
+            And MTL_SYSTEM_ITEMS.OMD_IS_RECORD_DELETED = 'N'
+            And MTL_SYSTEM_ITEMS.ORGANIZATION_ID = 89
+        Left Join HSTG.HSTG_EBS_PO_REQUISITION_LINES_ALL PO_REQUISITION_LINES_ALL (nolock)
+            On OE_ORDER_LINES_ALL.SOURCE_DOCUMENT_LINE_ID = PO_REQUISITION_LINES_ALL.REQUISITION_LINE_ID
+            And PO_REQUISITION_LINES_ALL.META_CURRENT_RECORD_INDICATOR = 'Y'
+            And PO_REQUISITION_LINES_ALL.META_DELETE_INDICATOR = 'N'
+WHERE   OE_ORDER_LINES_ALL.OMD_CURRENT_RECORD_INDICATOR = 'Y'
+        And OE_ORDER_LINES_ALL.OMD_IS_RECORD_DELETED = 'N'
+        And OE_ORDER_LINES_ALL.OPEN_FLAG = 'Y'
+        And OE_ORDER_LINES_ALL.BOOKED_FLAG = 'Y'
+        And OE_ORDER_LINES_ALL.CANCELLED_FLAG = 'N'
+Group By OE_ORDER_HEADERS_ALL.ORDERED_DATE
+        , OE_ORDER_HEADERS_ALL.ORDER_NUMBER
+        , OE_ORDER_HEADERS_ALL.CUST_PO_NUMBER
+        , OE_ORDER_LINES_ALL.SCHEDULE_SHIP_DATE
+        , PO_REQUISITION_LINES_ALL.ATTRIBUTE1
