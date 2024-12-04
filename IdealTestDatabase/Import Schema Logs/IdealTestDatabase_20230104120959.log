@@ -1,0 +1,86 @@
+4/01/2023 1:09:59 pm	This log contains information about the import schema operation into project 'IdealTestDatabase' on computer 'INZASO21343' by user 'Laeque.Anwar'.
+4/01/2023 1:09:59 pm	Import of database schema has started.
+4/01/2023 1:10:07 pm	Gathering database credentials
+4/01/2023 1:10:07 pm	Gathering database options
+4/01/2023 1:10:07 pm	Gathering generic database scoped configuration option
+4/01/2023 1:10:07 pm	Gathering users
+4/01/2023 1:10:08 pm	Gathering roles
+4/01/2023 1:10:08 pm	Gathering application roles
+4/01/2023 1:10:08 pm	Gathering role memberships
+4/01/2023 1:10:08 pm	Gathering filegroups
+4/01/2023 1:10:08 pm	Gathering full-text catalogs
+4/01/2023 1:10:08 pm	Gathering assemblies
+4/01/2023 1:10:08 pm	Gathering certificates
+4/01/2023 1:10:08 pm	Gathering symmetric keys
+4/01/2023 1:10:08 pm	Gathering encrypted symmetric keys
+4/01/2023 1:10:08 pm	Gathering schemas
+4/01/2023 1:10:08 pm	Gathering XML schema collections
+4/01/2023 1:10:08 pm	Gathering user-defined data types
+4/01/2023 1:10:08 pm	Gathering user-defined types
+4/01/2023 1:10:08 pm	Gathering table types
+4/01/2023 1:10:08 pm	Gathering unique keys for table types
+4/01/2023 1:10:08 pm	Gathering primary keys for table types
+4/01/2023 1:10:08 pm	Gathering indexes for table types
+4/01/2023 1:10:08 pm	Gathering check constraints for table types
+4/01/2023 1:10:08 pm	Gathering default constraints for table types
+4/01/2023 1:10:08 pm	Gathering partition functions
+4/01/2023 1:10:08 pm	Gathering partition schemes
+4/01/2023 1:10:08 pm	Gathering functions
+4/01/2023 1:10:08 pm	Gathering encrypted functions
+4/01/2023 1:10:08 pm	Gathering aggregates
+4/01/2023 1:10:08 pm	Gathering procedures
+4/01/2023 1:10:09 pm	Gathering encrypted procedures
+4/01/2023 1:10:09 pm	Gathering tables
+4/01/2023 1:10:14 pm	Gathering primary keys
+4/01/2023 1:10:14 pm	Gathering unique constraints
+4/01/2023 1:10:14 pm	Gathering foreign keys
+4/01/2023 1:10:14 pm	Gathering default constraints
+4/01/2023 1:10:14 pm	Gathering check constraints
+4/01/2023 1:10:14 pm	Gathering views
+4/01/2023 1:10:14 pm	Gathering encrypted views
+4/01/2023 1:10:14 pm	Gathering indexes
+4/01/2023 1:10:14 pm	Gathering statistics
+4/01/2023 1:10:14 pm	Gathering full-text index stoplists
+4/01/2023 1:10:14 pm	Gathering search property lists
+4/01/2023 1:10:14 pm	Gathering search properties
+4/01/2023 1:10:14 pm	Gathering full-text indexes
+4/01/2023 1:10:14 pm	Gathering column store indexes
+4/01/2023 1:10:14 pm	Gathering spatial indexes
+4/01/2023 1:10:14 pm	Gathering XML indexes
+4/01/2023 1:10:14 pm	Gathering Selective XML indexes
+4/01/2023 1:10:14 pm	Gathering encrypted triggers
+4/01/2023 1:10:14 pm	Gathering triggers
+4/01/2023 1:10:14 pm	Gathering encrypted and clr ddl triggers
+4/01/2023 1:10:14 pm	Gathering ddl triggers
+4/01/2023 1:10:14 pm	Creating edge constraints
+4/01/2023 1:10:14 pm	Gathering synonyms
+4/01/2023 1:10:14 pm	Gathering defaults
+4/01/2023 1:10:14 pm	Gathering data constraint uddt bindings
+4/01/2023 1:10:14 pm	Gathering rules
+4/01/2023 1:10:14 pm	Gathering data constraint uddt bindings
+4/01/2023 1:10:14 pm	Gathering message types
+4/01/2023 1:10:14 pm	Gathering queues
+4/01/2023 1:10:14 pm	Gathering contracts
+4/01/2023 1:10:14 pm	Gathering services
+4/01/2023 1:10:14 pm	Gathering event notifications
+4/01/2023 1:10:14 pm	Gathering remote service bindings
+4/01/2023 1:10:14 pm	Gathering broker priorities
+4/01/2023 1:10:14 pm	Gathering signatures
+4/01/2023 1:10:14 pm	Gathering data compression options
+4/01/2023 1:10:14 pm	Gathering sequence types
+4/01/2023 1:10:14 pm	Gathering security policies
+4/01/2023 1:10:14 pm	Gather column encryption keys
+4/01/2023 1:10:14 pm	Gathering column master keys
+4/01/2023 1:10:14 pm	Gathering external data sources
+4/01/2023 1:10:14 pm	Gathering external tables
+4/01/2023 1:10:14 pm	Gathering extended properties
+4/01/2023 1:10:14 pm	Gathering assemblies
+4/01/2023 1:10:15 pm	Your permissions to see all objects in the server or database could not be verified.  The original error was:
+The SELECT permission has not been granted on 'sys.sql_logins' for the 'master' database. You must be a member of the 'loginmanager' role to access this system view. 
+Reverse Engineer will continue the import process, and logins will not be imported.
+The reverse engineering operation will attempt to continue anyway, but the resulting model might be incomplete, malformed, or incorrect.
+4/01/2023 1:10:17 pm	Scanning project for duplicate elements
+4/01/2023 1:10:17 pm	Finished duplicate element processing
+4/01/2023 1:10:19 pm	Finished importing database.
+4/01/2023 1:10:19 pm	A summary of the import was saved to the following location: C:\Users\laeque.anwar\Documents\GitHub Repositories\Repos\TSTSQLDB\IdealTestDatabase\Import Schema Logs\IdealTestDatabase_20230104120959.log
+4/01/2023 1:10:19 pm	Click Finish to continue...
